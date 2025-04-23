@@ -1,10 +1,8 @@
 #include <windows.h>
 #include <dwmapi.h>
 #include <stdio.h>
-#include <commctrl.h>
 
 #pragma comment(lib, "dwmapi.lib")
-#pragma comment(lib, "comctl32.lib")
 
 // Window procedure
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
@@ -12,11 +10,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 // Application entry point
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
     // Register the window class
-    INITCOMMONCONTROLSEX iccex;
-    iccex.dwSize = sizeof(INITCOMMONCONTROLSEX);
-    iccex.dwICC = ICC_WIN95_CLASSES | ICC_DATE_CLASSES | ICC_USEREX_CLASSES;
-    InitCommonControlsEx(&iccex);
-    
     const wchar_t CLASS_NAME[] = L"Green Title Bar Window Class";
 
     WNDCLASS wc = {};
